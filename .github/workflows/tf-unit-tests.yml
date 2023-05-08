@@ -5,7 +5,7 @@ on:
 
 jobs:
   terraform-unit-tests:
-    name: 'Terraform Unit Tests1'
+    name: 'Terraform Unit Tests'
     runs-on: ubuntu-latest
     
     steps:
