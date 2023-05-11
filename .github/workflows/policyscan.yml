@@ -16,4 +16,4 @@ jobs:
       uses: azure/policy-compliance-scan@v0
       with:
         scopes: |
-          /subscriptions/6e977b0d-998c-42d7-97ed-dd70040cff12
+          /subscriptions/6e977b0d-998c-42d7-97ed-dd70040cff12/resourceGroups/azdorg
