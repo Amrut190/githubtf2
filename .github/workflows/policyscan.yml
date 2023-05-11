@@ -9,12 +9,11 @@ jobs:
     # Azure Login       
     - name: Login to Azure
       uses: azure/login@v1
-    with:
-      creds: '{"clientId":"${{ secrets.ARM_CLIENT_ID }}","clientSecret":"${{ secrets.ARM_CLIENT_SECRET }}","subscriptionId":"${{ secrets.ARM_SUBSCRIPTION_ID }}","tenantId":"${{ secrets.ARM_TENANT_ID }}"}'
+      with:
+        creds: '{"clientId":"${{ secrets.ARM_CLIENT_ID }}","clientSecret":"${{ secrets.ARM_CLIENT_SECRET }}","subscriptionId":"${{ secrets.ARM_SUBSCRIPTION_ID }}","tenantId":"${{ secrets.ARM_TENANT_ID }}"}'
     
     - name: Check for resource compliance
       uses: azure/policy-compliance-scan@v0
       with:
         scopes: |
           /subscriptions/6e977b0d-998c-42d7-97ed-dd70040cff12
-        
