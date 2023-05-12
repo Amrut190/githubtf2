@@ -24,4 +24,4 @@ steps:
     workflow: 'policyscan.yml'
     actionInputs: |
       scopes: '/subscriptions/your-subscription-id-here'
-    token: $(GITHUB_TOKEN)
+    token: $(ARM_GITHUB_TOKEN)
