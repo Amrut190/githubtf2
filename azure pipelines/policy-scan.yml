@@ -29,5 +29,5 @@ steps:
   inputs:
     gh: 'github.com_ahethaysham'
     repo: 'Ahethaysham-Ahmed/githubtf2'
-    workflow: 'workflows/policy-scan.yml'
+    workflow: '.github/workflows/policyscan.yml'
     ref: 'main'
