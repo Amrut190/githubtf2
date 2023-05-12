@@ -13,3 +13,4 @@ steps:
     repo: 'Ahethaysham-Ahmed/githubtf2'
     workflow: 'My Workflow'
     ref: 'main'
+    dlArtifacts: true
