@@ -18,13 +18,13 @@ steps:
     pip install -r requirements.txt
     pytest
   displayName: 'Run Tests'
-- task: GitHubAction@0
-  inputs:
-    repository: 'Ahethaysham-Ahmed/githubtf2'
-    workflow: 'policyscan.yml'
-    actionInputs: |
-      scopes: '/subscriptions/your-subscription-id-here'
-    token: $(ARM_GITHUB_TOKEN)
+# - task: GitHubAction@0
+#   inputs:
+#     repository: 'Ahethaysham-Ahmed/githubtf2'
+#     workflow: 'policyscan.yml'
+#     actionInputs: |
+#       scopes: '/subscriptions/your-subscription-id-here'
+#     token: $(ARM_GITHUB_TOKEN)
 - task: RunWorkflow@1
   inputs:
     gh: 'github.com_ahethaysham'
