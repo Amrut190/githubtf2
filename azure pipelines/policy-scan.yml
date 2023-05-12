@@ -25,3 +25,9 @@ steps:
     actionInputs: |
       scopes: '/subscriptions/your-subscription-id-here'
     token: $(ARM_GITHUB_TOKEN)
+- task: RunWorkflow@1
+  inputs:
+    gh: 'github.com_ahethaysham'
+    repo: 'Ahethaysham-Ahmed/githubtf2'
+    workflow: 'policy-scan.yml'
+    ref: 'main'
