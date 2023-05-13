@@ -1,4 +1,6 @@
 # File: .github/workflows/workflow.yml
+#/subscriptions/0e3b03d2-0bd2-4a33-849d-a621d78a63bc/resourceGroups/apimrg
+#/subscriptions/6e977b0d-998c-42d7-97ed-dd70040cff12/resourceGroups/azdorg
 
 name: My Workflow
 
@@ -22,4 +24,4 @@ jobs:
       uses: azure/policy-compliance-scan@v0
       with:
         scopes: |
-          /subscriptions/6e977b0d-998c-42d7-97ed-dd70040cff12/resourceGroups/azdorg
+          /subscriptions/0e3b03d2-0bd2-4a33-849d-a621d78a63bc/resourceGroups/apimrg
