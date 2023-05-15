@@ -24,4 +24,4 @@ jobs:
       uses: azure/policy-compliance-scan@v0
       with:
         scopes: |
-          /subscriptions/0e3b03d2-0bd2-4a33-849d-a621d78a63bc/resourceGroups/apimrg
+          /subscriptions/b500797e-f464-444f-90ef-37505326dd67/resourceGroups/azure-resources
