@@ -1,7 +1,11 @@
 name: 'Terraform Plan'
 
-on
-
+on:
+ workflow_call:
+    inputs:
+      enable-code-scans:
+        required: false
+        type: boolean
 jobs:
   terraform-plan:
     name: 'Terraform Plan'
