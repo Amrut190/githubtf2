@@ -19,14 +19,17 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-  terraform-plan:
-    name: 'Trigger Terraform Plan'
-    needs: terraform-plan-apply
-    runs-on: ubuntu-latest
-    uses: MphasisPipelineFactory/shared-workflows/.github/workflows/terraform-plan.yml@main
-
   terraform-apply:
     name: 'Trigger Terraform Apply'
-    needs: terraform-plan
+    needs: terraform-plan-apply
     runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+jobs:
+  - name: Trigger Terraform Plan
+    uses: MphasisPipelineFactory/shared-workflows/.github/workflows/terraform-plan.yml@main
+
+  - name: Trigger Terraform Apply
     uses: MphasisPipelineFactory/shared-workflows/.github/workflows/terraform-apply.yml@main
