@@ -13,21 +13,20 @@ jobs:
     name: 'Terraform Plan and Apply'
     runs-on: ubuntu-latest
     permissions:
-     id-token: write
-     contents: read # default
-
+      id-token: write
+      contents: read # default
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Trigger Terraform Plan
-        uses: MphasisPipelineFactory/shared-workflows@main
-        with:
-          workflow: '.github/workflows/terraform-plan.yml'
+  terraform-plan:
+    name: 'Trigger Terraform Plan'
+    needs: terraform-plan-apply
+    runs-on: ubuntu-latest
+    uses: MphasisPipelineFactory/shared-workflows/.github/workflows/terraform-plan.yml@main
 
-      - name: Trigger Terraform Apply
-        uses: MphasisPipelineFactory/shared-workflows@main
-        with:
-          workflow: '.github/workflows/terraform-apply.yml'
-
-#        uses: MphasisPipelineFactory/shared-workflows@main
+  terraform-apply:
+    name: 'Trigger Terraform Apply'
+    needs: terraform-plan
+    runs-on: ubuntu-latest
+    uses: MphasisPipelineFactory/shared-workflows/.github/workflows/terraform-apply.yml@main
