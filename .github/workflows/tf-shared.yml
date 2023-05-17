@@ -14,6 +14,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+        
       - name: Trigger Terraform Plan
         uses: Ahethaysham-Ahmed/githubtf2@main
 
