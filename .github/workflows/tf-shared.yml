@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - name: Trigger Terraform Plan
-        uses: ./.github/workflows/terraform-plan.yml
+        uses: Ahethaysham-Ahmed/githubtf2@main
 
       - name: Trigger Terraform Apply
-        uses: ./.github/workflows/terraform-apply.yml
+        uses: Ahethaysham-Ahmed/githubtf2@main
