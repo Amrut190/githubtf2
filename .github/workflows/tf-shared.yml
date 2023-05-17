@@ -16,9 +16,9 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
-        
+
       - name: Trigger Terraform Plan
-        uses: MphasisPipelineFactory/shared-workflows/.github/workflows/terraform-plan.yml@main
+        uses: MphasisPipelineFactory/shared-workflows@main
 
       - name: Trigger Terraform Apply
-        uses: MphasisPipelineFactory/shared-workflows/.github/workflows/terraform-apply.yml@main
+        uses: MphasisPipelineFactory/shared-workflows@main
