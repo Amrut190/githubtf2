@@ -1,0 +1,13 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: deployment-access-binding
+subjects:
+- kind: User
+  name: Ahethaysham.Ahmed@mphasis.com # Replace with the actual user or group name
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: ClusterRole
+  name: view # Replace with the appropriate role name if "view" doesn't provide sufficient access
+  apiGroup: rbac.authorization.k8s.io
+#kubectl apply -f deployment-access.yaml
