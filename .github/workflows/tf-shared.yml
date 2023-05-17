@@ -19,6 +19,12 @@ jobs:
 
       - name: Trigger Terraform Plan
         uses: MphasisPipelineFactory/shared-workflows@main
+        with:
+          workflow: '.github/workflows/terraform-plan.yml'
 
       - name: Trigger Terraform Apply
         uses: MphasisPipelineFactory/shared-workflows@main
+        with:
+          workflow: '.github/workflows/terraform-apply.yml'
+
+#        uses: MphasisPipelineFactory/shared-workflows@main
