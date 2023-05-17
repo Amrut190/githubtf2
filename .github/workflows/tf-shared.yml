@@ -12,6 +12,9 @@ jobs:
   terraform-plan-apply:
     name: 'Terraform Plan and Apply'
     runs-on: ubuntu-latest
+    permissions:
+     id-token: write
+     contents: read # default
 
     steps:
       - name: Checkout Repository
