@@ -1,0 +1,21 @@
+name: Main Workflow
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  terraform-plan-apply:
+    name: 'Terraform Plan and Apply'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger Terraform Plan
+        uses: ./.github/workflows/terraform-plan.yml
+
+      - name: Trigger Terraform Apply
+        uses: ./.github/workflows/terraform-apply.yml
