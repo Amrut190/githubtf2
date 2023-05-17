@@ -18,7 +18,7 @@ jobs:
         uses: actions/checkout@v2
         
       - name: Trigger Terraform Plan
-        uses: Ahethaysham-Ahmed/githubtf2@main
+        uses: MphasisPipelineFactory/shared-workflows/.github/workflows/terraform-plan.yml@main
 
       - name: Trigger Terraform Apply
-        uses: Ahethaysham-Ahmed/githubtf2@main
+        uses: MphasisPipelineFactory/shared-workflows/.github/workflows/terraform-apply.yml@main
