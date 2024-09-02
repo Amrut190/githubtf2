@@ -1,7 +1,3 @@
-# File: .github/workflows/workflow.yml
-#/subscriptions/0e3b03d2-0bd2-4a33-849d-a621d78a63bc/resourceGroups/apimrg
-#/subscriptions/6e977b0d-998c-42d7-97ed-dd70040cff12/resourceGroups/azdorg
-
 name: My Workflow
 
 on:
@@ -9,16 +5,21 @@ on:
   pull_request:
   workflow_dispatch:
 
-
 jobs:
   assess-policy-compliance:    
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write  # Required for OIDC authentication
+      contents: read   # Allows access to repository content (if needed)
+
     steps:
     # Azure Login       
-    - name: Login to Azure
+    - name: Login to Azure using OIDC
       uses: azure/login@v1
       with:
-        creds: '{"clientId":"${{ secrets.ARM_CLIENT_ID }}","clientSecret":"${{ secrets.ARM_CLIENT_SECRET }}","subscriptionId":"${{ secrets.ARM_SUBSCRIPTION_ID }}","tenantId":"${{ secrets.ARM_TENANT_ID }}"}'
+        client-id: ${{ secrets.ARM_CLIENT_ID }}  # Use the secret for the client ID
+        tenant-id: ${{ secrets.ARM_TENANT_ID }}  # Use the secret for the tenant ID
+        subscription-id: ${{ secrets.ARM_SUBSCRIPTION_ID }}  # Use the secret for the subscription ID
     
     - name: Check for resource compliance
       uses: azure/policy-compliance-scan@v0
